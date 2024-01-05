@@ -14,10 +14,11 @@ document.getElementById('string-form').addEventListener('submit', function(event
     }
 
     var letters = string.split('');
-    letters.sort(() => Math.random() - 0.5);
+    var legendLetters = [...letters];
+    legendLetters.sort(() => Math.random() - 0.5);
 
-    for (var i = 0; i < letters.length; i++) {
-        var letter = letters[i];
+    for (var i = 0; i < legendLetters.length; i++) {
+        var letter = legendLetters[i];
         var number = Math.floor(Math.random() * 20) + 1;
         legend[letter] = number;
 
@@ -26,6 +27,11 @@ document.getElementById('string-form').addEventListener('submit', function(event
         var cell2 = row.insertCell(1);
         cell1.innerHTML = number;
         cell2.innerHTML = letter;
+    }
+
+    for (var i = 0; i < letters.length; i++) {
+        var letter = letters[i];
+        var number = legend[letter];
 
         var input = document.createElement('input');
         input.type = 'text';
