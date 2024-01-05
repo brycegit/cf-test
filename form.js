@@ -14,7 +14,7 @@ document.getElementById('string-form').addEventListener('submit', function(event
     }
 
     var letters = string.split('');
-    var legendLetters = [...letters];
+    var legendLetters = [...letters.filter(letter => letter !== ' ')];
     legendLetters.sort(() => Math.random() - 0.5);
 
     var usedLetters = [];
@@ -47,15 +47,21 @@ document.getElementById('string-form').addEventListener('submit', function(event
 
     for (let i = 0; i < letters.length; i++) {
         let letter = letters[i];
+        if (letter === ' ') {
+            wordAccum[i] = ' ';
+            var space = document.createElement('span');
+            space.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            problems.appendChild(space);
+            continue;
+        }
         let number = legend[letter];
-
         var input = document.createElement('input');
         input.type = 'text';
         input.placeholder = '1 + ' + (number - 1) + ' = ?';
         input.addEventListener('input', function(event) {
             if (event.target.value == letter) {
                 wordAccum[i] = letter;
-                var sortedWord = Object.keys(wordAccum).sort().map(key => wordAccum[key]).join('');
+                var sortedWord = Object.keys(wordAccum).sort((a, b) => a - b).map(key => wordAccum[key]).join('');
                 wordElement.textContent = sortedWord;
                 if (sortedWord === string) {
                     document.getElementById('success-message').textContent = 'Success!';
