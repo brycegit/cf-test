@@ -6,8 +6,11 @@ document.getElementById('string-form').addEventListener('submit', function(event
     var table = document.getElementById('legend-table').getElementsByTagName('tbody')[0];
     var problems = document.getElementsByClassName('math-problems')[0];
 
-    for (var i = 0; i < string.length; i++) {
-        var letter = string[i];
+    var letters = string.split('');
+    letters.sort(function() { return 0.5 - Math.random() });
+
+    for (var i = 0; i < letters.length; i++) {
+        var letter = letters[i];
         var number = Math.floor(Math.random() * 20) + 1;
         legend[letter] = number;
 
