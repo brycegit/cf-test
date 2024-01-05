@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <div class="math-problems">
-        <input type="text" placeholder="1 + 1 = ?" />
-        <input type="text" placeholder="2 + 2 = ?" />
-        <input type="text" placeholder="3 + 3 = ?" />
-        <input type="text" placeholder="4 + 4 = ?" />
-        <input type="text" placeholder="5 + 5 = ?" />
-        <input type="text" placeholder="6 + 6 = ?" />
-        <input type="text" placeholder="7 + 7 = ?" />
-        <input type="text" placeholder="8 + 8 = ?" />
-        <input type="text" placeholder="9 + 9 = ?" />
-        <input type="text" placeholder="10 + 10 = ?" />
-    </div>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="math-problems"></div>
     <form id="string-form">
-        <input type="text" id="string-input" placeholder="Enter a string" required />
-        <button type="submit">Submit String</button>
+      <input
+        type="text"
+        id="string-input"
+        placeholder="Enter a string"
+        required
+      />
+      <button type="submit">Submit String</button>
     </form>
-    <form id="key-value-form" style="display: none;">
-        <input type="number" id="key-input" placeholder="Enter a number" required />
-        <input type="text" id="value-input" placeholder="Enter a letter" required />
-        <button type="submit">Add Pair</button>
+    <form id="key-value-form" style="display: none">
+      <input
+        type="number"
+        id="key-input"
+        placeholder="Enter a number"
+        required
+      />
+      <input
+        type="text"
+        id="value-input"
+        placeholder="Enter a letter"
+        required
+      />
+      <button type="submit">Add Pair</button>
     </form>
     <table id="legend-table">
-        <thead>
-            <tr>
-                <th>Number</th>
-                <th>Letter</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Letter</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
     <script src="form.js"></script>
-</body>
+  </body>
 </html>
