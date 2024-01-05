@@ -17,10 +17,23 @@ document.getElementById('string-form').addEventListener('submit', function(event
     var legendLetters = [...letters];
     legendLetters.sort(() => Math.random() - 0.5);
 
+    var usedLetters = [];
+    var usedNumbers = [];
+
     for (var i = 0; i < legendLetters.length; i++) {
         var letter = legendLetters[i];
-        var number = Math.floor(Math.random() * 20) + 1;
+        if (usedLetters.includes(letter)) {
+            continue;
+        }
+
+        var number;
+        do {
+            number = Math.floor(Math.random() * 20) + 1;
+        } while (usedNumbers.includes(number));
+
         legend[letter] = number;
+        usedLetters.push(letter);
+        usedNumbers.push(number);
 
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
