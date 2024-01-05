@@ -45,9 +45,9 @@ document.getElementById('string-form').addEventListener('submit', function(event
     var wordElement = document.getElementById('word');
     var word = '';
 
-    for (var i = 0; i < letters.length; i++) {
-        var letter = letters[i];
-        var number = legend[letter];
+    for (let i = 0; i < letters.length; i++) {
+        let letter = letters[i];
+        let number = legend[letter];
 
         var input = document.createElement('input');
         input.type = 'text';
