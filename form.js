@@ -17,8 +17,8 @@ document.getElementById('string-form').addEventListener('submit', function(event
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-        cell1.innerHTML = letter;
-        cell2.innerHTML = number;
+        cell1.innerHTML = number;
+        cell2.innerHTML = letter;
 
         var input = document.createElement('input');
         input.type = 'text';
