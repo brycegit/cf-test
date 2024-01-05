@@ -43,7 +43,7 @@ document.getElementById('string-form').addEventListener('submit', function(event
     }
 
     var wordElement = document.getElementById('word');
-    var word = '';
+    var wordAccum = {};
 
     for (let i = 0; i < letters.length; i++) {
         let letter = letters[i];
@@ -54,8 +54,8 @@ document.getElementById('string-form').addEventListener('submit', function(event
         input.placeholder = '1 + ' + (number - 1) + ' = ?';
         input.addEventListener('input', function() {
             if (this.value == number) {
-                word += letter;
-                wordElement.textContent = word;
+                wordAccum[i] = letter;
+                wordElement.textContent = Object.keys(wordAccum).sort().map(key => wordAccum[key]).join('');
             }
         });
         problems.appendChild(input);
