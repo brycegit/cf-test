@@ -57,6 +57,9 @@ document.getElementById('string-form').addEventListener('submit', function(event
                 wordAccum[i] = letter;
                 var sortedWord = Object.keys(wordAccum).sort().map(key => wordAccum[key]).join('');
                 wordElement.textContent = sortedWord;
+                if (sortedWord === string) {
+                    document.getElementById('success-message').textContent = 'Success!';
+                }
             }
         });
         problems.appendChild(input);
