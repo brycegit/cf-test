@@ -53,7 +53,7 @@ document.getElementById('string-form').addEventListener('submit', function(event
         input.type = 'text';
         input.placeholder = '1 + ' + (number - 1) + ' = ?';
         input.addEventListener('input', function(event) {
-            if (event.target.value == number) {
+            if (event.target.value == letter) {
                 wordAccum[i] = letter;
                 var sortedWord = Object.keys(wordAccum).sort().map(key => wordAccum[key]).join('');
                 wordElement.textContent = sortedWord;
