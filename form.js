@@ -67,7 +67,7 @@ document.getElementById('string-form').addEventListener('submit', function(event
                 if (sortedWord === string) {
                     document.getElementById('success-message').textContent = 'Success!';
                     var wordImage = document.getElementById('word-image');
-                    wordImage.src = 'https://picsum.photos/200';
+                    wordImage.src = `https://source.unsplash.com/200x200/?${string}`;
                     wordImage.style.display = 'block';
                 }
             }
