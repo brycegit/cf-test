@@ -2,9 +2,16 @@ document.getElementById('string-form').addEventListener('submit', function(event
     event.preventDefault();
 
     var string = document.getElementById('string-input').value;
-    var legend = JSON.parse(sessionStorage.getItem('legend') || '{}');
+    var legend = {};
+    sessionStorage.setItem('legend', JSON.stringify(legend));
     var table = document.getElementById('legend-table').getElementsByTagName('tbody')[0];
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
     var problems = document.getElementsByClassName('math-problems')[0];
+    while (problems.firstChild) {
+        problems.removeChild(problems.firstChild);
+    }
 
     var letters = string.split('');
     letters.sort(function() { return 0.5 - Math.random() });
