@@ -52,10 +52,11 @@ document.getElementById('string-form').addEventListener('submit', function(event
         var input = document.createElement('input');
         input.type = 'text';
         input.placeholder = '1 + ' + (number - 1) + ' = ?';
-        input.addEventListener('input', function() {
-            if (this.value == number) {
+        input.addEventListener('input', function(event) {
+            if (event.target.value == number) {
                 wordAccum[i] = letter;
-                wordElement.textContent = Object.keys(wordAccum).sort().map(key => wordAccum[key]).join('');
+                var sortedWord = Object.keys(wordAccum).sort().map(key => wordAccum[key]).join('');
+                wordElement.textContent = sortedWord;
             }
         });
         problems.appendChild(input);
