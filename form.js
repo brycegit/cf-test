@@ -14,6 +14,7 @@ document.getElementById('string-form').addEventListener('submit', function(event
     }
 
     var letters = string.split('');
+    letters.sort(() => Math.random() - 0.5);
 
     for (var i = 0; i < letters.length; i++) {
         var letter = letters[i];
