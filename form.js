@@ -50,6 +50,7 @@ document.getElementById('string-form').addEventListener('submit', function(event
         if (letter === ' ') {
             wordAccum[i] = ' ';
             var space = document.createElement('span');
+            space.className = 'space';
             space.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
             problems.appendChild(space);
             continue;
