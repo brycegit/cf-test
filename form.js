@@ -42,6 +42,9 @@ document.getElementById('string-form').addEventListener('submit', function(event
         cell2.innerHTML = letter;
     }
 
+    var word = '';
+    var wordElement = document.getElementById('word');
+
     for (var i = 0; i < letters.length; i++) {
         var letter = letters[i];
         var number = legend[letter];
@@ -49,6 +52,12 @@ document.getElementById('string-form').addEventListener('submit', function(event
         var input = document.createElement('input');
         input.type = 'text';
         input.placeholder = '1 + ' + (number - 1) + ' = ?';
+        input.addEventListener('input', function() {
+            if (this.value == number) {
+                word += letter;
+                wordElement.textContent = word;
+            }
+        });
         problems.appendChild(input);
     }
 
