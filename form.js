@@ -42,8 +42,8 @@ document.getElementById('string-form').addEventListener('submit', function(event
         cell2.innerHTML = letter;
     }
 
-    var word = '';
     var wordElement = document.getElementById('word');
+    var word = '';
 
     for (var i = 0; i < letters.length; i++) {
         var letter = letters[i];
