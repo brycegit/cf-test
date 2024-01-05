@@ -66,6 +66,9 @@ document.getElementById('string-form').addEventListener('submit', function(event
                 wordElement.textContent = sortedWord;
                 if (sortedWord === string) {
                     document.getElementById('success-message').textContent = 'Success!';
+                    var wordImage = document.getElementById('word-image');
+                    wordImage.src = string + '.jpg';
+                    wordImage.style.display = 'block';
                 }
             }
         });

@@ -61,6 +61,11 @@ button:hover {
     display: inline-block;
 }
 
+#word {
+    font-size: 2em;
+    font-weight: bold;
+}
+
 #success-message {
     color: green;
     font-weight: bold;
