@@ -58,7 +58,8 @@ document.getElementById('string-form').addEventListener('submit', function(event
         let number = legend[letter];
         var input = document.createElement('input');
         input.type = 'text';
-        input.placeholder = '1 + ' + (number - 1) + ' = ?';
+        var firstNumber = Math.floor(Math.random() * number) + 1;
+        input.placeholder = firstNumber + ' + ' + (number - firstNumber) + ' = ?';
         input.addEventListener('input', function(event) {
             if (event.target.value == letter) {
                 wordAccum[i] = letter;
