@@ -74,4 +74,5 @@ document.getElementById('string-form').addEventListener('submit', function(event
 
     sessionStorage.setItem('legend', JSON.stringify(legend));
     document.getElementById('string-input').value = '';
+    document.getElementById('string-form').style.display = 'none';
 });
