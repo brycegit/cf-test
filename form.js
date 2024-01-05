@@ -67,7 +67,7 @@ document.getElementById('string-form').addEventListener('submit', function(event
                 if (sortedWord === string) {
                     document.getElementById('success-message').textContent = 'Success!';
                     var wordImage = document.getElementById('word-image');
-                    wordImage.src = 'https://api.unsplash.com/photos/random?query=' + string + '&client_id=YOUR_ACCESS_KEY';
+                    wordImage.src = 'https://picsum.photos/200';
                     wordImage.style.display = 'block';
                 }
             }
